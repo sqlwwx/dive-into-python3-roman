@@ -8,8 +8,8 @@ experienced programmers.  Visit http://diveintopython3.org/ for the
 latest version.
 '''
 
-class OutOfRangeError(ValueError):
-    pass
+class OutOfRangeError(ValueError): pass
+class NotIntegerError(ValueError): pass
 
 roman_numeral_map = (('M',  1000),
                      ('CM', 900),

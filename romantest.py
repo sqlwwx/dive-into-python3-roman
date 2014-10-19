@@ -87,6 +87,10 @@ class ToRomanBadInput(unittest.TestCase):
     def test_negative(self):
         '''to_roman 不能为负数'''
         self.assertRaises(roman.OutOfRangeError, roman.to_roman, -1)
+    
+    def test_non_integer(self):
+        '''to_roman 必须为整数'''
+        self.assertRaises(roman.NotIntegerError, roman.to_roman, 0.5)
 
 if __name__ == '__main__':
     unittest.main()
