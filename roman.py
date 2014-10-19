@@ -29,7 +29,7 @@ roman_numeral_map = (('M',  1000),
 
 roman_numeral_pattern = re.compile('''
     ^                   # beginning of string
-    M{0,3}              # thousands - 0 to 3 M's
+    M{0,4}              # thousands - 0 to 4 M's
     (CM|CD|D?C{0,3})    # hundreds - 900 (CM), 400 (CD), 0-300 (0 to 3 C's),
                         #            or 500-800 (D, followed by 0 to 3 C's)
     (XC|XL|L?X{0,3})    # tens - 90 (XC), 40 (XL), 0-30 (0 to 3 X's),
@@ -41,7 +41,7 @@ roman_numeral_pattern = re.compile('''
 
 def to_roman(n):
     '''整数转化为罗马数字'''
-    if not (0 < n < 4000):
+    if not (0 < n < 5000):
         raise OutOfRangeError('n 必须是 1...3999')
     if not isinstance(n, int):
         raise NotIntegerError('无法转化非整数')
