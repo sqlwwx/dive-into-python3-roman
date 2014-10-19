@@ -39,6 +39,10 @@ def to_roman(n):
             n -= integer
     return result
 
+def from_roman(s):
+    '''罗马数字转化为整数'''
+    pass
+
 # Copyright (c) 2009, Mark Pilgrim, All rights reserved.
 # 
 # Redistribution and use in source and binary forms, with or without modification,
