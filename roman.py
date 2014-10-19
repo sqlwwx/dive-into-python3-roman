@@ -41,7 +41,13 @@ def to_roman(n):
 
 def from_roman(s):
     '''罗马数字转化为整数'''
-    pass
+    result = 0
+    index = 0
+    for numeral, integer in roman_numeral_map:
+        while s[index : index + len(numeral)] == numeral:
+            result += integer
+            index += len(numeral)
+    return result
 
 # Copyright (c) 2009, Mark Pilgrim, All rights reserved.
 # 
