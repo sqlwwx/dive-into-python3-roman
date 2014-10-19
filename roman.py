@@ -8,6 +8,9 @@ experienced programmers.  Visit http://diveintopython3.org/ for the
 latest version.
 '''
 
+class OutOfRangeError(ValueError):
+    pass
+
 roman_numeral_map = (('M',  1000),
                      ('CM', 900),
                      ('D',  500),
