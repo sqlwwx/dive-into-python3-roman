@@ -29,6 +29,8 @@ def to_roman(n):
     '''整数转化为罗马数字'''
     if not (0 < n < 4000):
         raise OutOfRangeError('n 必须是 1...3999')
+    if not isinstance(n, int):
+        raise NotIntegerError('无法转化非整数')
 
     result = ''
     for numeral, integer in roman_numeral_map:
