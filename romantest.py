@@ -115,6 +115,10 @@ class FromRomanBadInput(unittest.TestCase):
                   'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
             self.assertRaises(roman.InvalidRomanNumeralError, roman.from_roman, s)
 
+    def test_blank(self):
+        '''from_roman 空字符串异常'''
+        self.assertRaises(roman.InvalidRomanNumeralError, roman.from_roman, '')
+
     def test_non_string(self):
         '''from_roman 必须为字符串'''
         self.assertRaises(roman.InvalidRomanNumeralError, roman.from_roman, 1)

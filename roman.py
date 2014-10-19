@@ -57,6 +57,8 @@ def from_roman(s):
     '''罗马数字转化为整数'''
     if not isinstance(s, str):
         raise InvalidRomanNumeralError('Input must be a string')
+    if not s:
+        raise InvalidRomanNumeralError('Input can not be blank')
     if not roman_numeral_pattern.search(s):
         raise InvalidRomanNumeralError('Invalid Roman numeral: {}'.format(s))
 
