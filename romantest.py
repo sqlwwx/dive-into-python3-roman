@@ -79,6 +79,14 @@ class ToRomanBadInput(unittest.TestCase):
     def test_too_large(self):
         '''to_roman 超过最大值应报错'''
         self.assertRaises(roman.OutOfRangeError, roman.to_roman, 4000)
+    
+    def test_zero(self):
+        '''to_roman 不能为零'''
+        self.assertRaises(roman.OutOfRangeError, roman.to_roman, 0)
+
+    def test_negative(self):
+        '''to_roman 不能为负数'''
+        self.assertRaises(roman.OutOfRangeError, roman.to_roman, -1)
 
 if __name__ == '__main__':
     unittest.main()
