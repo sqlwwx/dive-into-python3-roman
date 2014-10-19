@@ -115,6 +115,10 @@ class FromRomanBadInput(unittest.TestCase):
                   'MCMC', 'XCX', 'IVI', 'LM', 'LD', 'LC'):
             self.assertRaises(roman.InvalidRomanNumeralError, roman.from_roman, s)
 
+    def test_non_string(self):
+        '''from_roman 必须为字符串'''
+        self.assertRaises(roman.InvalidRomanNumeralError, roman.from_roman, 1)
+
 class RoundtripCheck(unittest.TestCase):
     def test_roundtrip(self):
         '''from_roman 当 n = 1...3999 时 from_roman(to_roman(n))==n'''
