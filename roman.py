@@ -27,6 +27,9 @@ roman_numeral_map = (('M',  1000),
 
 def to_roman(n):
     '''整数转化为罗马数字'''
+    if n > 3999:
+        raise OutOfRangeError('必须小于 4000')
+
     result = ''
     for numeral, integer in roman_numeral_map:
         while n >= integer:
